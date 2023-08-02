@@ -1,0 +1,15 @@
+{
+  "name": "validator-cpf-cnpj",
+  "version": "1.0.0",
+  "description": "cpf and cnpj validator",
+  "main": "n",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/marcusmigueell/validator-cpf-cnpj.git"
+  },
+  "author": "MarcusMiguel",
+  "license": "ISC"
+}
