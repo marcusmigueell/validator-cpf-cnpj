@@ -1,0 +1,60 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "CPF/CNPJ Validation API",
+        "description": "The CPF/CNPJ Validation API is a service that allows validation of CPF (Individual Taxpayer Registration) or CNPJ (National Legal Entity Taxpayer) numbers through a single route. This API was developed to provide a simple and effective way to verify the validity of informed CPFs or CNPJs.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "marcusmigueell@gmail.com",
+            "name": "Marcus Miguel"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "paths": {
+        "/api/Validate/{identifier}": {
+            "get": {
+                "tags": [
+                    "Validate CPF or CNPJ"
+                ],
+                "summary": "Validate CPF or CNPJ",
+                "description": "Validates the given CPF or CNPJ.",
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "in": "path",
+                        "description": "Send only numbers",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "CPF/CNPJ is valid.",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "message": "CPF 123.456.789-10 is valid!"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Invalid CPF/CNPJ.",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "message": "CPF 123.456.789-10 is invalid!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
